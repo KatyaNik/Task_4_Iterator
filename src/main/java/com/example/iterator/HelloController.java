@@ -24,7 +24,6 @@ public class HelloController {
     public Pane pane;
     public Label label;
     private ConcreteAggregate slides;
-    private java.util.Iterator<Image> imageIterator;
     private List<Image> imageList;
     @FXML
     public ImageView imageView;
@@ -37,8 +36,6 @@ public class HelloController {
     public Button buttonBegin;
     public Button buttonEnd;
 
-    public Button button;
-    public Timeline time =new Timeline();
 
     private int currentIndex = 0; // Для отслеживания текущего изображения
     private Timeline slideshowTimeline;
@@ -133,7 +130,6 @@ public class HelloController {
     }
     @FXML
     public void buttonRuClick(){
-        //Locale currentLocale = new Locale("ru","RU");
         Locale.setDefault(new Locale("ru", "RU"));
 
         ResourceBundle messages = ResourceBundle.getBundle("messages", Locale.getDefault());
