@@ -1,0 +1,30 @@
+@startuml
+interface model.Aggregate {
+~ Iterator<Image> getIterator()
+}
+
+interface model.Iterator {
++ boolean hasNext()
++ Image next()
+}
+
+class model.ConcreteAggregate {
+- List<Image> images
++ Iterator<Image> getIterator()
++ List<Image> getAllImages()
+}
+
+
+class model.ConcreteAggregate$ImageIterator {
+- int current
++ boolean hasNext()
++ Image next()
+}
+
+
+
+
+model.Aggregate <|.. model.ConcreteAggregate
+model.ConcreteAggregate +.. model.ConcreteAggregate$ImageIterator
+model.Iterator <|.. model.ConcreteAggregate$ImageIterator
+@enduml
